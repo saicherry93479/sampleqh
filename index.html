@@ -1,70 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quickhyre | Coming Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickhyre | Comming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <img src="./Bot 1.png" />
+      <p class="header">Quick <span>Hyre</span></p>
+      <p class="subtag">Watch Online on 15/9 at 10 a.m. IST</p>
+    </div>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Outfit", sans-serif;
+        font-optical-sizing: auto;
       }
-
-      html {
-        --s: 300px; /* control the size*/
-        --c1: #2e3138;
-        --c2: #121721;
-        --c3: #3b3e45;
-
-        background:
-          repeating-conic-gradient(
-              from 30deg,
-              #0000 0 120deg,
-              var(--c3) 0 180deg
-            )
-            calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
-          repeating-conic-gradient(
-            from 30deg,
-            var(--c1) 0 60deg,
-            var(--c2) 0 120deg,
-            var(--c3) 0 180deg
-          );
-        background-size: var(--s) calc(var(--s) * 0.577);
-      }
-
       body {
-        padding: 1rem;
+        background-color: black;
         height: 100vh;
         width: 100vw;
-        display: grid;
-        place-items: center;
-        color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
       }
-
-      main {
+      img {
+        height: 400px;
+      }
+      span {
+        color: #6e9ac8;
+      }
+      p {
+        color: white;
         text-align: center;
-        background-olor: radial-gradient(circle, #0000, #000000af);
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-        border: 1px solid #fff4;
-        backdrop-filter: blur(5px);
       }
-
-      h1 {
-        line-height: 1.5;
-        margin-bottom: 1rem;
+      .header {
+        font-size: 50px;
+        margin-top: 20px;
+      }
+      .subtag {
+        font-size: 20px;
+        margin-top: 10px;
+        letter-spacing: 1px;
       }
     </style>
-  </head>
-  <body>
-    <main>
-      <h1>We're cooking up something amazing for you!</h1>
-      <p>Stay tuned for our launch.</p>
-    </main>
-
-    <!-- <p>Designed with ❤️ by Speranxa</p> -->
   </body>
 </html>
