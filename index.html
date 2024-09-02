@@ -3,20 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quickhyre | Comming Soon</title>
+    <title>Quickhyre | Coming Soon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div>
-      <img src="./Bot 1.png" />
-      <p class="header">Quick <span>Hyre</span></p>
-      <p class="subtag">Watch Online on 15/9 at 10 a.m. IST</p>
-    </div>
+      rel="stylesheet" />
     <style>
       * {
         margin: 0;
@@ -34,8 +26,13 @@
         align-items: center;
         overflow: hidden;
       }
+      div {
+        text-align: center;
+        animation: fadeIn 2s ease-in-out;
+      }
       img {
         height: 400px;
+        animation: float 4s ease-in-out infinite;
       }
       span {
         color: #6e9ac8;
@@ -47,12 +44,51 @@
       .header {
         font-size: 50px;
         margin-top: 20px;
+        animation: slideInFromBottom 1.5s ease-in-out;
       }
       .subtag {
         font-size: 20px;
         margin-top: 10px;
         letter-spacing: 1px;
+        animation: slideInFromBottom 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
       }
     </style>
+  </head>
+  <body>
+    <div>
+      <img src="./Bot 1.png" alt="Quickhyre Bot" />
+      <p class="header">Quick <span>Hyre</span></p>
+      <p class="subtag">Watch Online on 15/9 at 10 a.m. IST</p>
+    </div>
   </body>
 </html>
