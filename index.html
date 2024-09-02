@@ -73,9 +73,8 @@
         background: linear-gradient(to bottom, transparent, white);
         border-radius: 50%;
         opacity: 0.7;
-        animation: comet-move 10s linear infinite;
       }
-      
+
       @keyframes float {
         0% {
           transform: translateY(0);
@@ -101,17 +100,8 @@
         0% {
           transform: translate(0, 0);
         }
-        25% {
-          transform: translate(50vw, 50vh) rotate(180deg);
-        }
-        50% {
-          transform: translate(100vw, 0) rotate(360deg);
-        }
-        75% {
-          transform: translate(50vw, -50vh) rotate(540deg);
-        }
         100% {
-          transform: translate(0, 0) rotate(720deg);
+          transform: translate(100vw, 100vh) rotate(360deg);
         }
       }
     </style>
@@ -137,14 +127,40 @@
           comet.style.background = colors[Math.floor(Math.random() * colors.length)];
           comet.style.width = `${Math.random() * 6 + 2}px`;
           comet.style.height = comet.style.width;
+          
+          // Random starting position
           comet.style.top = `${Math.random() * 100}vh`;
           comet.style.left = `${Math.random() * 100}vw`;
-          comet.style.animationDuration = `${Math.random() * 10 + 10}s`;
+          
+          // Generate a random path
+          const animationDuration = `${Math.random() * 10 + 10}s`;
+          comet.style.animation = `comet-move ${animationDuration} linear infinite`;
+          
+          // Add a random scale factor to make it look more varied
+          comet.style.transform = `scale(${Math.random()})`;
+          
+          // Randomly set keyframe properties
+          const keyframes = `
+            @keyframes comet-move-${i} {
+              0% {
+                transform: translate(${Math.random() * 100}vw, ${Math.random() * 100}vh);
+              }
+              100% {
+                transform: translate(${Math.random() * 100}vw, ${Math.random() * 100}vh) rotate(${Math.random() * 360}deg);
+              }
+            }
+          `;
+          const styleSheet = document.createElement('style');
+          styleSheet.type = 'text/css';
+          styleSheet.innerText = keyframes;
+          document.head.appendChild(styleSheet);
+
+          comet.style.animation = `comet-move-${i} ${animationDuration} linear infinite`;
           cometsContainer.appendChild(comet);
         }
       }
 
-      createComets(50); // Adjust the number of comets here
+      createComets(150); // Adjust the number of comets here
     </script>
   </body>
 </html>
